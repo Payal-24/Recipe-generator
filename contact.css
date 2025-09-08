@@ -1,0 +1,489 @@
+/* Import Fonts */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: rgb(120, 115, 115);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(120, 115, 115);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff7043;
+}
+
+/* Fixed Back Button */
+.nav-back {
+  margin-right: 100px;
+}
+
+.nav-back .back-btn {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-back .back-btn:hover {
+  background: #ff7043;
+  color: white;
+}
+
+/* Hero Section */
+.auth-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  position: relative;
+  background: rgb(120, 115, 115);
+}
+
+/* Floating Food Icons */
+.floating-icons img {
+  position: absolute;
+  width: 60px;
+  opacity: 0.9;
+  animation: float 6s infinite ease-in-out;
+  z-index: 1;
+}
+
+.icon-1 { top: 15%; left: 10%; animation-delay: 0s; }
+.icon-2 { bottom: 20%; right: 15%; animation-delay: 2s; }
+.icon-3 { top: 25%; right: 25%; animation-delay: 4s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Auth Container */
+.auth-container {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Form Styles */
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-header h2 {
+  font-family: "Playfair Display", serif;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #f5f5f5;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.input-group label {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-group textarea + label {
+  top: 1rem;
+  transform: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px #ff7043;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0;
+  font-size: 0.8rem;
+  background: #fff;
+  padding: 0 0.4rem;
+  color: #ff7043;
+}
+
+.input-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #ff7043;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+
+.input-group input:focus ~ .input-border,
+.input-group textarea:focus ~ .input-border {
+  transform: scaleX(1);
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff7043;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #ff5722;
+}
+
+.btn-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: translateX(-100%);
+}
+
+.auth-btn:hover .btn-overlay {
+  transform: translateX(100%);
+  transition: 0.5s;
+}
+
+/* Animation for form elements */
+.auth-form {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success Message */
+.form-message {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.hidden {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out;
+  font-family: var(--font-dancing);
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+}
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--foreground);
+  font-family: var(--font-playfair);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin: 0.75rem 0 0.5rem;
+  font-weight: 500;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  transition: all 0.2s ease;
+  background-color: var(--background);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-warm);
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: var(--font-sans);
+  margin-top: 1rem;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-warm);
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;
+  background: var(--foreground);
+  color: var(--primary-foreground);
+  font-family: var(--font-sans);
+}
+
+#successMessage {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(0.89);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes letterFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--burgundy), 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(var(--burgundy), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--burgundy), 0);
+    }
+}
+
+@keyframes inputFocus {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes wavyText {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+}

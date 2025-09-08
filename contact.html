@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOKBOT - Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="./chef.png" alt="Chef Hat Logo" class="logo-img">
+            <h2 class="logo">COOKBOT</h2>
+        </div>
+        
+        <div class="nav-back">
+            <a href="./landing.html" class="back-btn">← Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="auth-hero">
+        <div class="floating-icons">
+            <img src="./icons8-burger-80.png" alt="Burger" class="float-icon icon-1">
+            <img src="./icons8-pizza-80.png" alt="Pizza" class="float-icon icon-2">
+            <img src="./icons8-salad-64.png" alt="Salad" class="float-icon icon-3">
+        </div>
+
+        <div class="auth-container">
+            <div class="auth-form contact-form active">
+                <div class="form-header">
+                    <h2>Get in Touch!</h2>
+                    <p>We'd love to hear from you</p>
+                </div>
+                
+                <form class="form" id="contactForm">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="firstName" required placeholder=" ">
+                            <label for="firstName">First Name</label>
+                            <span class="input-border"></span>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="lastName" required placeholder=" ">
+                            <label for="lastName">Last Name</label>
+                            <span class="input-border"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Email Address</label>
+                        <span class="input-border"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <textarea id="message" required placeholder=" " rows="4"></textarea>
+                        <label for="message">Your Message</label>
+                        <span class="input-border"></span>
+                    </div>
+                    
+                    <button type="submit" class="auth-btn">
+                        <span>Send Message</span>
+                        <div class="btn-overlay"></div>
+                    </button>
+                </form>
+                <div id="successMessage" class="form-message hidden">
+                    ✅ Thank you! Your message has been sent.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./contact.js"></script>
+</body>
+</html>

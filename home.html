@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeAI - Delicious Recipe Generator</title>
+    <meta name="description" content="AI-powered recipe generator for personalized cooking experiences">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="./chef.png" alt="Chef Hat Logo" class="logo-img">
+                <span class="nav-title">COOKBOT</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="./landing.html" class="nav-link">Home</a>
+                <a href="./recipe.html" class="nav-link">Recipes</a>
+                <a href="aboutus.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button class="nav-button">🛒 GROCERY </button>
+            </div>
+
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slider Section -->
+    <section class="slider" id="slider">
+        <div class="slide active" style="background-image: url('./homeee.webp')">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title">Delicious Recipes</h1>
+                <div class="slide-separator">
+                    <div class="separator-line"></div>
+                    <p class="slide-subtitle">• for •</p>
+                    <div class="separator-line"></div>
+                </div>
+                <h2 class="slide-season">Every Day</h2>
+                <p class="slide-description">Generate personalized recipes for your perfect meal</p>
+                <button class="slide-button">Start Creating Recipes</button>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('./noodles.jpg')">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title">Italian Classics</h1>
+                <div class="slide-separator">
+                    <div class="separator-line"></div>
+                    <p class="slide-subtitle">• with •</p>
+                    <div class="separator-line"></div>
+                </div>
+                <h2 class="slide-season">Passion</h2>
+                <p class="slide-description">Discover authentic flavors from around the world</p>
+                <button class="slide-button">Start Creating Recipes</button>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('./waffle.jpg')">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title">Sweet Creations</h1>
+                <div class="slide-separator">
+                    <div class="separator-line"></div>
+                    <p class="slide-subtitle">• for •</p>
+                    <div class="separator-line"></div>
+                </div>
+                <h2 class="slide-season">Special Moments</h2>
+                <p class="slide-description">Create memorable desserts for every occasion</p>
+                <button class="slide-button">Start Creating Recipes</button>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="slider-arrow prev" id="prevBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+        </button>
+        <button class="slider-arrow next" id="nextBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+        </button>
+
+        <!-- Slide Indicators -->
+        <div class="slider-indicators">
+            <button class="indicator active" data-slide="0"></button>
+            <button class="indicator" data-slide="1"></button>
+            <button class="indicator" data-slide="2"></button>
+        </div>
+
+        <!-- Food Icons -->
+        <div class="food-icons">
+          
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-header">
+                <h2 class="content-title">Food Recipe Generator</h2>
+                <p class="content-description">
+                    If you have a passion for cooking or want to discover new flavors, our AI-powered recipe generator 
+                    is the perfect solution for your culinary adventures. Create personalized recipes that match your 
+                    taste, dietary preferences, and available ingredients.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🍳</div>
+                    <h3 class="feature-title">Easy Cooking</h3>
+                    <p class="feature-text">Step-by-step instructions for perfect results every time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">Healthy Options</h3>
+                    <p class="feature-text">Nutritious recipes tailored to your dietary needs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3 class="feature-title">Personalized</h3>
+                    <p class="feature-text">AI creates unique recipes based on your preferences</p>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">10,000+</span>
+                    <p class="stat-label">Recipes Generated</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5,000+</span>
+                    <p class="stat-label">Happy Cooks</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4.9★</span>
+                    <p class="stat-label">Average Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="home.js"></script>
+</body>
+</html>

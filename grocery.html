@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CookBot - Grocery List</title>
+  <link rel="stylesheet" href="grocery.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1 class="logo">CookBot</h1>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="planner.html">Planner</a>
+      <a href="grocery.html" class="active">🛒 Grocery</a>
+    </div>
+  </nav>
+
+  <!-- Grocery List Section -->
+  <section class="grocery-container">
+    <h2>🛒 Grocery List</h2>
+    
+    <div class="input-box">
+      <input type="text" id="itemInput" placeholder="Enter grocery item...">
+      <button onclick="addItem()">Add</button>
+    </div>
+
+    <ul id="groceryList"></ul>
+  </section>
+
+  <script src="grocery.js"></script>
+</body>
+</html>

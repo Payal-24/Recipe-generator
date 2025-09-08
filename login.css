@@ -1,0 +1,297 @@
+/* Import Fonts */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: rgb(120, 115, 115); /* same as navbar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(120, 115, 115);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff7043;
+}
+
+
+/* Fixed Back Button */
+.nav-back {
+  margin-right: 100px;
+}
+.nav-back .back-btn {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-back .back-btn:hover {
+  background: #ff7043;
+  color: white;
+}
+
+/* Hero Section */
+.auth-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  position: relative;
+  background: rgb(120, 115, 115); /* same as navbar - this is where the floating icons are */
+}
+
+
+/* Floating Food Icons */
+.floating-icons img {
+  position: absolute;
+  width: 60px;
+  opacity: 0.9;
+  animation: float 6s infinite ease-in-out;
+  z-index: 1;   /* icons stay behind form */
+}
+
+.icon-1 { top: 15%; left: 10%; animation-delay: 0s; }
+.icon-2 { bottom: 20%; right: 15%; animation-delay: 2s; }
+.icon-3 { top: 25%; right: 25%; animation-delay: 4s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Auth Container */
+.auth-container {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Forms */
+.auth-form {
+  display: none;
+}
+.auth-form.active {
+  display: block;
+}
+
+.form-header h2 {
+  font-family: "Playfair Display", serif;
+  color: #ff7043;
+  margin: 0 0 0.3rem;
+}
+.form-header p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 0.8rem;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+.input-group input:focus {
+  border-color: #ff7043;
+}
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: #999;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 0.75rem;
+  color: #ff7043;
+  background: white;
+  padding: 0 5px;
+}
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #555;
+}
+.checkbox-container input {
+  display: none;
+}
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ff7043;
+  margin-right: 8px;
+  border-radius: 4px;
+  position: relative;
+}
+.checkbox-container input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid #ff7043;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Links */
+.forgot-password {
+  font-size: 0.85rem;
+  color: #ff7043;
+  text-decoration: none;
+}
+.forgot-password:hover {
+  text-decoration: underline;
+}
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.auth-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  background: #ff7043;
+  color: white;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.auth-btn:hover {
+  background: #ff5722;
+}
+.auth-btn span {
+  position: relative;
+  z-index: 2;
+}
+.btn-overlay {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.3);
+  transition: left 0.4s;
+}
+.auth-btn:hover .btn-overlay {
+  left: 0;
+}
+
+/* Form Switch */
+.form-switch {
+  margin-top: 1rem;
+  text-align: center;
+}
+.form-switch a {
+  color: #ff7043;
+  font-weight: 600;
+  text-decoration: none;
+}
+.form-switch a:hover {
+  text-decoration: underline;
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: rgba(120, 115, 115, 0.9); /* Changed from white to navbar color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success-message.active {
+  display: flex;
+}
+.success-content {
+  text-align: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.success-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.success-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: #ff7043;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.success-btn:hover {
+  background: #ff5722;
+}

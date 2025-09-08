@@ -1,0 +1,243 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 20px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffb347; /* softer warm hover */
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;  /* elegant logo font */
+  font-size: 35px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.logo-img {
+  width: 90px !important;
+  height: 90px !important;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url("./360_F_212663294_PPIXEQMJVZSiKlwMsPBMruuf4Fcctkn9.jpg") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Hero Text Animation */
+.hero-text h1, 
+.hero-text p, 
+.hero-text .btn {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: textUp 1s forwards;
+}
+
+/* Animate them one by one */
+.hero-text h1 {
+  animation-delay: 1.2s; /* after icons drop */
+}
+.hero-text p {
+  animation-delay: 1.5s;
+}
+.hero-text .btn {
+  animation-delay: 1.8s;
+}
+
+/* Keyframes for text motion */
+@keyframes textUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.hero-text p {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: aliceblue;
+  background: rgba(0, 0, 0, 0.45)
+}
+
+.btn:hover {
+  background: #e5533d;
+}
+
+/* Icon Container */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  z-index: 2;
+  position: relative;
+}
+
+.drop-icon {
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: dropDown 1s forwards;
+}
+
+/* Animate each icon with delay */
+.drop-icon:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.drop-icon:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.drop-icon:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+/* Keyframes for drop */
+@keyframes dropDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Hamburger hidden by default */
+.hamburger {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    display: none; /* hidden by default */
+  }
+
+  .nav-links.show {
+    display: flex; /* show when active */
+  }
+
+  .hamburger {
+    display: block; /* show hamburger only on mobile */
+  }
+}
+
+
+/* Login Button in Navbar */
+.login-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: auto; /* pushes it to the right */
+  
+}
+
+.login-btn:hover {
+  background: #e5533d;
+}
+
+
+/* Logo Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+}
